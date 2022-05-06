@@ -9,7 +9,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
 	return (
 		<div className='bg-primary text-white'>
-			<div className='container mx-auto md:px-16 sm:px-0 py-8 md:grid gap-11 grid-cols-4'>
+			<div className='grid-cols-4 gap-11 px-4 py-11 md:grid md:px-16'>
 				<div className='col-span-full'>
 					<Header />
 				</div>

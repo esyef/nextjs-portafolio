@@ -4,6 +4,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import CallToAction from './components/callToaction'
+import Avatar from '../../public/avatar.png'
+
+import styles from '../styles/MenuBurger.module.css'
 
 const Home: NextPage = () => {
 	return (
@@ -12,101 +15,98 @@ const Home: NextPage = () => {
 				<title>Yefweb | Portafolio</title>
 				<meta
 					name='description'
-					content='Yeferson Olarte Roncancio Yefweb Desarrollador frontend'
+					content='Yeferson Olarte Roncancio Desarrollador frontend (yefweb)'
 				/>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<section className='md:flex items-center justify-between flex-wrap mb-14'>
-				<div className='flex flex-col gap-4'>
-					<h1 className='md:text-5xl'>
-						{' '}
-						Hola soy{' '}
-						<span className='text-emerald-400 font-bold'>Yeferson,</span> un
-						<span className='block font-bold'>
-							&lt; Frotend <span className='text-emerald-400'> Developer</span>{' '}
-							&#47; &gt;
-						</span>
-					</h1>
+			<section className='mb-14'>
+				<div className={styles.bg}>
+					<div className='flex  h-96 w-full flex-col items-center justify-center gap-4 rounded-md  bg-gradient-to-t from-primary shadow-lg shadow-primary'>
+						<h1 className='text-center text-4xl sm:text-5xl lg:text-7xl'>
+							{' '}
+							Hola soy{' '}
+							<span className='font-bold text-emerald-400'>Yeferson, </span>un
+							<span className='block font-bold'>
+								&lt;Frontend{' '}
+								<span className='text-emerald-400'> Developer</span>
+								&#47;&gt;
+							</span>
+						</h1>
 
-					<div className='flex flex-col gap-4'>
-						<div className='flex gap-5 items-center'>
-							<a
-								href='#sobre-mi'
-								className='bg-emerald-700 text-white p-4 uppercase font-medium  hover:shadow-sm  inline-block rounded-xl  duration-300
-							hover:bg-transparent hover:text-emerald-400 hover:shadow-emerald-700 
-							hover:-translate-y-1 transition-all scroll-smooth	
-							'
-							>
-								Sobre mí
-							</a>
-							<Link href='/contacto' passHref>
-								<a className='border-2 border-emerald-700 inline-block p-4 uppercase rounded-xl hover:bg-white hover:border-white hover:-translate-y-1 transition-all text-emerald-400 hover:text-primary  duration-300 hover:opacity-90'>
-									contáctame
+						<div className='flex flex-col gap-4 '>
+							<div className='flex items-center justify-center gap-5 md:justify-start'>
+								<a
+									href='#sobre-mi'
+									className='inline-block rounded-xl bg-emerald-700 p-3 font-medium  uppercase  text-white transition-all  duration-300
+							md:hover:-translate-y-1 md:hover:bg-transparent md:hover:text-emerald-400 
+							md:hover:shadow-sm md:hover:shadow-emerald-700 '
+								>
+									Sobre mí
 								</a>
-							</Link>
-						</div>
-						<div className='flex gap-4'>
-							<a
-								href='https://github.com/yeffweb'
-								target='_blank'
-								rel='noreferrer'
-							>
-								<Image
-									src='/github.svg'
-									alt='Github Logo'
-									height='30'
-									width='30'
-								/>
-							</a>
+								<Link href='/contacto' passHref>
+									<a className='inline-block rounded-xl border-2 border-emerald-700 p-3 uppercase text-emerald-400 transition-all duration-300 hover:-translate-y-1 hover:border-white hover:bg-white  hover:text-primary hover:opacity-90'>
+										contáctame
+									</a>
+								</Link>
+							</div>
+							<div className='flex items-center justify-center gap-4'>
+								<a
+									href='https://github.com/yeffweb'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<Image
+										src='/github.svg'
+										alt='Github Logo'
+										height='30'
+										width='30'
+									/>
+								</a>
 
-							<a
-								href='https://www.linkedin.com/in/yeferson-olarte-roncancio-432867171/'
-								target='_blank'
-								rel='noreferrer'
-							>
-								<Image
-									src='/linkedin.svg'
-									alt='Linkeding Logo'
-									height='30'
-									width='30'
-								/>
-							</a>
+								<a
+									href='https://www.linkedin.com/in/yeferson-olarte-roncancio-432867171/'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<Image
+										src='/linkedin.svg'
+										alt='Linkeding Logo'
+										height='30'
+										width='30'
+									/>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
-
-				<Image
-					src='/hero-image_1400.png'
-					alt='ilustración'
-					height='450'
-					width='600'
-				/>
 			</section>
 
-			<article id='sobre-mi' className='flex items-center justify-evenly mb-16'>
-				<div className='basis-1/3 -scale-x-100 shadow-lg shadow-slate-900 rounded-full'>
+			<article id='sobre-mi' className='mb-16 md:flex md:items-center md:gap-8'>
+				<div className='mx-auto w-2/4 -scale-x-100  md:basis-2/4'>
 					<Image
-						src='/avatar.png'
+						src={Avatar}
 						alt='Avatar Yeferson'
-						height='500px'
-						width='500px'
 						layout='responsive'
-						style={{ borderRadius: '50%' }}
+						width={600}
+						height={550}
+						style={{
+							borderRadius: '50%',
+						}}
 					/>
 				</div>
-				<div className='basis-2/4 flex flex-col gap-4'>
-					<p>
-						Soy desarrollador web, y me gusta crear la parte visual de un sitio
-						web modernos con HTML, CSS y Javascript. En mis proyectos, uso
-						ReactJs para un frontend moderno e interactivo. Vivo en Bogotá,
-						Colombia y estoy buscando nuevos retos en un rol como Frontend
-						Developer en una empresa emocionante. Me gustaría que vieras mi
-						trabajo.
+
+				<div className='md:basis-2/3'>
+					<p className='mb-4 sm:text-lg'>
+						Soy desarrollador web, me caracterizo por trabajar con ReactJs y CSS
+						para construir UI modernas e interactivas. Vivo en Bogotá, Colombia
+						y estoy buscando nuevos retos en un rol como Frontend Developer en
+						una empresa emocionante. Me gustaría que vieras mi trabajo.
 					</p>
+
 					<div>
 						<Link href='/proyectos' passHref>
-							<a className='border-2 border-emerald-700 inline-block p-4 uppercase rounded-xl hover:bg-white hover:border-white hover:opacity-90 text-emerald-400 hover:text-primary  duration-300 hover:-translate-y-1 transition-all '>
+							<a className='inline-block rounded-xl border-2 border-emerald-700 p-4 uppercase text-emerald-400 transition-all duration-300 hover:-translate-y-1 hover:border-white  hover:bg-white hover:text-primary hover:opacity-90 '>
 								ver proyectos
 							</a>
 						</Link>

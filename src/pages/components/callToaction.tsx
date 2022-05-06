@@ -3,11 +3,14 @@ import Link from 'next/link'
 
 const CallToAction = () => {
 	return (
-		<article className='flex flex-col justify-center items-center gap-4'>
-			<h2 className='text-4xl font-bold'> ¿Te gustaría hacer equipo? </h2>
+		<article className='mb-14 flex flex-col items-center justify-center gap-4'>
+			<h2 className='text-center text-4xl font-bold'>
+				{' '}
+				¿Te gustaría hacer equipo conmigo?
+			</h2>
 
 			<Link href='/contacto' passHref>
-				<a className='bg-emerald-700 text-white p-4 uppercase font-medium  hover:shadow-sm  inline-block rounded-xl transition-all duration-300 hover:bg-transparent hover:text-emerald-400 hover:shadow-emerald-700 hover:-translate-y-1'>
+				<a className='inline-block rounded-xl bg-emerald-700 p-4 font-medium  uppercase  text-white transition-all duration-300 hover:-translate-y-1 hover:bg-transparent hover:shadow-sm md:hover:text-emerald-400 md:hover:shadow-emerald-700'>
 					contáctame
 				</a>
 			</Link>
